@@ -1,0 +1,12 @@
+services:
+  service-bot:
+    build: .
+    env_file: .env
+    ports:
+      - "3000:8080"
+    volumes:
+      - service-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  service-data:
